@@ -82,6 +82,7 @@ impl GenerateImageStrategy for CFFluxProcessor {
         {
             Ok(resp) => resp,
             Err(e) => {
+                dbg!(&e);
                 return Err(OutputErrorData::new(format!(
                     "Failed to send request: {}",
                     e
