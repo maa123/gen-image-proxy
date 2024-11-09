@@ -10,7 +10,7 @@ RUN cargo build --release
 
 RUN strip target/release/gen-image-proxy
 
-FROM gcr.io/distroless/static-debian12
+FROM alpine:3.20
 
 COPY --from=builder /src/app/target/release/gen-image-proxy /gen-image-proxy
 
