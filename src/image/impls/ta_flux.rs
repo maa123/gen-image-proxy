@@ -124,6 +124,7 @@ impl GenerateImageStrategy for TAFluxProcessor {
         };
 
         if content_type.to_str().map(|s| s.starts_with("application/json")).unwrap_or(false) {
+            println!("Response Content-Type: {:?}", content_type);
             return Err(OutputErrorData::new("Invalid content type".to_string()));
         }
 
